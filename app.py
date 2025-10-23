@@ -1,13 +1,15 @@
 # app.py
-from flask import Flask, jsonify
+from flask import Flask, render_template, jsonify
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return jsonify({
-        "message": "🚀 Hello from Flask running in GitHub Codespaces!"
-    })
+    return render_template('index.html')
+
+@app.route('/calculator/<calc_type>')
+def calculator(calc_type):
+    return render_template('index.html', calculator_type=calc_type)
 
 @app.route('/health')
 def health():
