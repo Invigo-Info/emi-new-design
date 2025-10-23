@@ -138,9 +138,10 @@
                 <p class="section-subtitle">Calculate your monthly EMI and visualize your loan breakdown</p>
             </div>
 
-            <div class="calculator-container">
-                <!-- Calculator Inputs -->
-                <div class="calculator-inputs">
+            <div class="calculator-wrapper">
+                <div class="calculator-container">
+                    <!-- Calculator Inputs -->
+                    <div class="calculator-inputs">
                     <div class="input-group">
                         <label for="loanAmount">
                             <span class="label-text">Loan Amount</span>
@@ -210,6 +211,111 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Popular EMI Calculators Sidebar -->
+            <aside class="popular-calculators">
+                <h3 class="popular-title">Popular EMI Calculators</h3>
+                <div class="popular-list">
+                    <a href="#calculator" class="popular-item active" onclick="scrollToCalculator('home')">
+                        <div class="popular-icon home">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                        </div>
+                        <div class="popular-content">
+                            <h4 class="popular-name">Home Loan EMI</h4>
+                            <p class="popular-desc">Calculate home loan EMI</p>
+                        </div>
+                        <svg class="popular-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </a>
+
+                    <a href="#calculator" class="popular-item" onclick="scrollToCalculator('car')">
+                        <div class="popular-icon car">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 17h-2v-2l1-4h12l1 4v2h-2"></path>
+                                <circle cx="7" cy="17" r="2"></circle>
+                                <circle cx="17" cy="17" r="2"></circle>
+                                <path d="M5 11V7a2 2 0 012-2h10a2 2 0 012 2v4"></path>
+                            </svg>
+                        </div>
+                        <div class="popular-content">
+                            <h4 class="popular-name">Car Loan EMI</h4>
+                            <p class="popular-desc">Calculate car loan EMI</p>
+                        </div>
+                        <svg class="popular-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </a>
+
+                    <a href="#calculator" class="popular-item" onclick="scrollToCalculator('personal')">
+                        <div class="popular-icon personal">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div class="popular-content">
+                            <h4 class="popular-name">Personal Loan EMI</h4>
+                            <p class="popular-desc">Calculate personal loan EMI</p>
+                        </div>
+                        <svg class="popular-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </a>
+
+                    <a href="#calculator" class="popular-item" onclick="scrollToCalculator('business')">
+                        <div class="popular-icon business">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            </svg>
+                        </div>
+                        <div class="popular-content">
+                            <h4 class="popular-name">Business Loan EMI</h4>
+                            <p class="popular-desc">Calculate business loan EMI</p>
+                        </div>
+                        <svg class="popular-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </a>
+
+                    <a href="#calculator" class="popular-item" onclick="scrollToCalculator('education')">
+                        <div class="popular-icon education">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                            </svg>
+                        </div>
+                        <div class="popular-content">
+                            <h4 class="popular-name">Education Loan EMI</h4>
+                            <p class="popular-desc">Calculate education loan EMI</p>
+                        </div>
+                        <svg class="popular-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </a>
+
+                    <a href="#calculator" class="popular-item" onclick="scrollToCalculator('gold')">
+                        <div class="popular-icon gold">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="8" r="6"></circle>
+                                <path d="M15.477 12.89l3.515 3.515a2 2 0 01-2.828 2.828L12 15.07"></path>
+                            </svg>
+                        </div>
+                        <div class="popular-content">
+                            <h4 class="popular-name">Gold Loan EMI</h4>
+                            <p class="popular-desc">Calculate gold loan EMI</p>
+                        </div>
+                        <svg class="popular-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </aside>
+        </div>
         </div>
     </section>
 
