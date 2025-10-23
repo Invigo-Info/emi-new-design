@@ -108,6 +108,102 @@ body {
     color: var(--primary);
 }
 
+/* Dropdown Menu */
+.nav-item {
+    position: relative;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.dropdown-arrow {
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    min-width: 220px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border: 1px solid var(--border);
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--text);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: var(--radius-md);
+    margin: 4px;
+}
+
+.dropdown-item:first-child {
+    margin-top: 8px;
+}
+
+.dropdown-item:last-child {
+    margin-bottom: 8px;
+}
+
+.dropdown-item svg {
+    flex-shrink: 0;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background: var(--secondary-bg);
+    color: var(--primary);
+}
+
+.dropdown-item:hover svg {
+    color: var(--primary);
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: var(--text);
+    transition: color 0.2s ease;
+}
+
+.mobile-menu-toggle:hover {
+    color: var(--primary);
+}
+
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
@@ -742,68 +838,496 @@ body {
 }
 
 /* Responsive Design */
+
+/* Large tablets and small desktops (1024px and below) */
 @media (max-width: 1024px) {
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.75rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.125rem;
     }
 
     .calculator-container {
         grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .section-title {
+        font-size: 2.25rem;
     }
 
     .footer-content {
         grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-xl);
     }
 }
 
+/* Tablets (768px and below) */
 @media (max-width: 768px) {
+    /* Container padding adjustment */
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    /* Navigation - Mobile Menu */
+    .nav-content {
+        position: relative;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 73px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        gap: 0;
+        padding: var(--spacing-md);
+        box-shadow: var(--shadow-lg);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: all 0.3s ease;
+        max-height: calc(100vh - 73px);
+        overflow-y: auto;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-links a {
+        padding: var(--spacing-sm) 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        border-left: 2px solid var(--primary);
+        margin-left: var(--spacing-md);
+        margin-top: var(--spacing-sm);
+        padding-left: var(--spacing-sm);
+        background: var(--secondary-bg);
+    }
+
+    .dropdown:hover .dropdown-arrow {
+        transform: none;
+    }
+
+    .dropdown.active .dropdown-arrow {
+        transform: rotate(180deg);
+    }
+
+    .dropdown .dropdown-menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .dropdown.active .dropdown-menu {
+        max-height: 500px;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: var(--spacing-xl) 0;
+    }
+
     .hero-content {
         grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
     }
 
     .hero-illustration {
         order: -1;
+        max-width: 400px;
+        margin: 0 auto;
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 2.25rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 0.875rem 1.75rem;
+        font-size: 1rem;
+    }
+
+    /* Section spacing */
+    .calculator-section,
+    .calculators-grid,
+    .benefits,
+    .trust,
+    .faq {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .section-header {
+        margin-bottom: var(--spacing-xl);
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.875rem;
     }
 
-    .nav-links {
-        display: none;
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    /* Calculator Section */
+    .calculator-container {
+        padding: var(--spacing-lg);
+        gap: var(--spacing-lg);
+    }
+
+    .calculator-inputs {
+        gap: var(--spacing-lg);
+    }
+
+    .label-text {
+        font-size: 0.875rem;
+    }
+
+    .label-value {
+        font-size: 1rem;
     }
 
     .result-cards {
         grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
     }
 
+    .result-card {
+        padding: var(--spacing-md);
+    }
+
+    .result-value {
+        font-size: 1.5rem;
+    }
+
+    .result-card.primary .result-value {
+        font-size: 2rem;
+    }
+
+    .chart-container {
+        height: 250px;
+    }
+
+    /* Calculator Grid */
+    .grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .calculator-card {
+        padding: var(--spacing-lg);
+    }
+
+    /* Benefits Section */
+    .four-col {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit-card {
+        padding: var(--spacing-lg);
+    }
+
+    /* Trust Section */
     .trust-content {
         grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .trust-badge {
+        justify-content: center;
+        padding: var(--spacing-lg);
     }
 
     .testimonials {
         grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .testimonial {
+        padding: var(--spacing-lg);
+    }
+
+    /* FAQ Section */
+    .faq-question {
+        padding: var(--spacing-md);
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: var(--spacing-xl) 0 var(--spacing-md);
     }
 
     .footer-content {
         grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+
+    .social-links {
+        justify-content: center;
     }
 }
 
+/* Mobile devices (480px and below) */
 @media (max-width: 480px) {
+    /* Container padding - smaller on mobile */
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    /* Navigation */
+    .nav-content {
+        padding: var(--spacing-sm) 0;
+    }
+
+    .logo {
+        font-size: 1.125rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .hero-content {
+        gap: var(--spacing-lg);
+    }
+
     .hero-title {
+        font-size: 1.875rem;
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9375rem;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .cta-button {
+        width: 100%;
+        justify-content: center;
+        padding: 0.875rem 1.5rem;
+    }
+
+    /* Section spacing */
+    .calculator-section,
+    .calculators-grid,
+    .benefits,
+    .trust,
+    .faq {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .section-header {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .section-title {
+        font-size: 1.625rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.9375rem;
+    }
+
+    /* Calculator Section */
+    .calculator-container {
+        padding: var(--spacing-md);
+        gap: var(--spacing-md);
+    }
+
+    .calculator-inputs {
+        gap: var(--spacing-md);
+    }
+
+    .input-group {
+        gap: var(--spacing-xs);
+    }
+
+    .input-group label {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .label-text {
+        font-size: 0.8125rem;
+    }
+
+    .label-value {
+        font-size: 0.9375rem;
+    }
+
+    .range-labels {
+        font-size: 0.8125rem;
+    }
+
+    .tenure-toggle {
+        gap: var(--spacing-xs);
+    }
+
+    .tenure-btn {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.875rem;
+    }
+
+    .result-card {
+        padding: var(--spacing-sm);
+    }
+
+    .result-label {
+        font-size: 0.8125rem;
+    }
+
+    .result-value {
+        font-size: 1.375rem;
+    }
+
+    .result-card.primary .result-value {
+        font-size: 1.875rem;
+    }
+
+    .chart-container {
+        height: 220px;
+        padding: var(--spacing-md);
+    }
+
+    /* Calculator Grid */
+    .calculator-card {
+        padding: var(--spacing-md);
+    }
+
+    .card-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .card-title {
+        font-size: 1.125rem;
+    }
+
+    .card-description {
+        font-size: 0.9375rem;
+    }
+
+    /* Benefits Section */
+    .benefit-card {
+        padding: var(--spacing-md);
+    }
+
+    .benefit-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .benefit-title {
+        font-size: 1.125rem;
+    }
+
+    .benefit-description {
+        font-size: 0.9375rem;
+    }
+
+    /* Trust Section */
+    .trust-badge {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--spacing-md);
+    }
+
+    .trust-number {
         font-size: 1.75rem;
+    }
+
+    .testimonial {
+        padding: var(--spacing-md);
+    }
+
+    .testimonial-text {
+        font-size: 0.9375rem;
+    }
+
+    /* FAQ Section */
+    .faq-question {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.9375rem;
+    }
+
+    .faq-item.active .faq-answer {
+        padding: 0 var(--spacing-md) var(--spacing-md);
+    }
+
+    .faq-answer p {
+        font-size: 0.9375rem;
+    }
+
+    /* Footer */
+    .footer-title {
+        font-size: 1rem;
+    }
+
+    .footer-description,
+    .footer-links a,
+    .footer-copyright {
+        font-size: 0.875rem;
+    }
+
+    .footer-disclaimer {
+        font-size: 0.8125rem;
+    }
+}
+
+/* Extra small devices (360px and below) */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 1.625rem;
     }
 
     .section-title {
         font-size: 1.5rem;
     }
 
-    .calculator-container {
-        padding: var(--spacing-md);
+    .result-card.primary .result-value {
+        font-size: 1.625rem;
+    }
+
+    .cta-button {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9375rem;
     }
 }

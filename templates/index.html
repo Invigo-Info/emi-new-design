@@ -25,11 +25,61 @@
                     <span class="logo-text">EMI Calculator</span>
                 </div>
                 <div class="nav-links">
-                    <a href="#calculators">Calculators</a>
+                    <div class="nav-item dropdown">
+                        <a href="#calculators" class="dropdown-toggle">
+                            Calculators
+                            <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#calculator" class="dropdown-item" onclick="scrollToCalculator('home')">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                                <span>Home Loan</span>
+                            </a>
+                            <a href="#calculator" class="dropdown-item" onclick="scrollToCalculator('car')">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 17h-2v-2l1-4h12l1 4v2h-2"></path>
+                                    <circle cx="7" cy="17" r="2"></circle>
+                                    <circle cx="17" cy="17" r="2"></circle>
+                                    <path d="M5 11V7a2 2 0 012-2h10a2 2 0 012 2v4"></path>
+                                </svg>
+                                <span>Car Loan</span>
+                            </a>
+                            <a href="#calculator" class="dropdown-item" onclick="scrollToCalculator('personal')">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                <span>Personal Loan</span>
+                            </a>
+                            <a href="#calculator" class="dropdown-item" onclick="scrollToCalculator('business')">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                </svg>
+                                <span>Business Loan</span>
+                            </a>
+                        </div>
+                    </div>
                     <a href="#features">Features</a>
                     <a href="#faq">FAQ</a>
                     <a href="#contact">Contact</a>
                 </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
             </div>
         </div>
     </nav>
