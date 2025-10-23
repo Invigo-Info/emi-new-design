@@ -43,6 +43,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -52,6 +53,7 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 .container {
@@ -303,6 +305,8 @@ body {
     padding: var(--spacing-xl);
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    max-width: 100%;
 }
 
 /* Calculator Inputs */
@@ -310,12 +314,16 @@ body {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xl);
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .input-group {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
+    max-width: 100%;
+    width: 100%;
 }
 
 .input-group label {
@@ -387,6 +395,9 @@ body {
     justify-content: space-between;
     font-size: 0.875rem;
     color: var(--text-secondary);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .tenure-toggle {
@@ -395,6 +406,8 @@ body {
     padding: 4px;
     background: #E5E7EB;
     border-radius: var(--radius-md);
+    max-width: 100%;
+    width: 100%;
 }
 
 .tenure-btn {
@@ -420,12 +433,16 @@ body {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-lg);
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .result-cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-md);
+    max-width: 100%;
+    width: 100%;
 }
 
 .result-card {
@@ -999,10 +1016,16 @@ body {
     .calculator-container {
         padding: var(--spacing-lg);
         gap: var(--spacing-lg);
+        overflow-x: hidden;
     }
 
     .calculator-inputs {
         gap: var(--spacing-lg);
+        overflow-x: hidden;
+    }
+
+    .calculator-results {
+        overflow-x: hidden;
     }
 
     .label-text {
@@ -1016,10 +1039,15 @@ body {
     .result-cards {
         grid-template-columns: 1fr;
         gap: var(--spacing-sm);
+        width: 100%;
+        max-width: 100%;
     }
 
     .result-card {
         padding: var(--spacing-md);
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .result-value {
@@ -1167,22 +1195,39 @@ body {
 
     /* Calculator Section */
     .calculator-container {
-        padding: var(--spacing-md);
+        padding: var(--spacing-sm);
         gap: var(--spacing-md);
+        overflow-x: hidden;
+        width: 100%;
     }
 
     .calculator-inputs {
         gap: var(--spacing-md);
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .calculator-results {
+        overflow-x: hidden;
+        width: 100%;
     }
 
     .input-group {
         gap: var(--spacing-xs);
+        width: 100%;
+        max-width: 100%;
     }
 
     .input-group label {
         flex-direction: column;
         align-items: flex-start;
         gap: 4px;
+        width: 100%;
+    }
+
+    .slider {
+        width: 100%;
+        max-width: 100%;
     }
 
     .label-text {
@@ -1199,15 +1244,25 @@ body {
 
     .tenure-toggle {
         gap: var(--spacing-xs);
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .tenure-btn {
         padding: var(--spacing-xs) var(--spacing-sm);
         font-size: 0.875rem;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
     .result-card {
         padding: var(--spacing-sm);
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .result-label {
@@ -1216,10 +1271,14 @@ body {
 
     .result-value {
         font-size: 1.375rem;
+        word-break: break-word;
+        overflow-wrap: break-word;
     }
 
     .result-card.primary .result-value {
         font-size: 1.875rem;
+        word-break: break-word;
+        overflow-wrap: break-word;
     }
 
     .chart-container {
