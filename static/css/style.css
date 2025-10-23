@@ -295,6 +295,14 @@ body {
     color: var(--text-secondary);
 }
 
+/* Calculator Wrapper - Two Column Layout */
+.calculator-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
 .calculator-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -477,6 +485,126 @@ body {
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
     height: 300px;
+}
+
+/* Popular EMI Calculators Sidebar */
+.popular-calculators {
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    padding: var(--spacing-lg);
+    position: sticky;
+    top: 90px;
+}
+
+.popular-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--border);
+}
+
+.popular-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.popular-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    background: var(--secondary-bg);
+    border: 2px solid transparent;
+}
+
+.popular-item:hover {
+    background: #EFF6FF;
+    border-color: var(--primary);
+    transform: translateX(4px);
+}
+
+.popular-item.active {
+    background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+    border-color: var(--primary);
+}
+
+.popular-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.popular-icon.home {
+    background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);
+    color: var(--primary);
+}
+
+.popular-icon.car {
+    background: linear-gradient(135deg, #DDD6FE 0%, #C4B5FD 100%);
+    color: #7C3AED;
+}
+
+.popular-icon.personal {
+    background: linear-gradient(135deg, #FCE7F3 0%, #FBCFE8 100%);
+    color: #DB2777;
+}
+
+.popular-icon.business {
+    background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
+    color: #059669;
+}
+
+.popular-icon.education {
+    background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+    color: #D97706;
+}
+
+.popular-icon.gold {
+    background: linear-gradient(135deg, #FEF9C3 0%, #FEF08A 100%);
+    color: #CA8A04;
+}
+
+.popular-content {
+    flex: 1;
+}
+
+.popular-name {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 2px;
+}
+
+.popular-desc {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.popular-arrow {
+    flex-shrink: 0;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.popular-item:hover .popular-arrow {
+    transform: translateX(4px);
+    color: var(--primary);
+}
+
+.popular-item.active .popular-arrow {
+    color: var(--primary);
 }
 
 /* Calculator Grid */
@@ -849,9 +977,21 @@ body {
         font-size: 1.125rem;
     }
 
+    /* Calculator Wrapper - Stack on tablets */
+    .calculator-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
     .calculator-container {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
+    }
+
+    /* Popular Calculators - Full width on tablets */
+    .popular-calculators {
+        position: relative;
+        top: 0;
     }
 
     .section-title {
@@ -996,6 +1136,11 @@ body {
     }
 
     /* Calculator Section */
+    .calculator-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
     .calculator-container {
         padding: var(--spacing-lg);
         gap: var(--spacing-lg);
@@ -1003,6 +1148,34 @@ body {
 
     .calculator-inputs {
         gap: var(--spacing-lg);
+    }
+
+    /* Popular Calculators - Mobile Layout */
+    .popular-calculators {
+        position: relative;
+        top: 0;
+        padding: var(--spacing-md);
+    }
+
+    .popular-title {
+        font-size: 1.125rem;
+    }
+
+    .popular-item {
+        padding: var(--spacing-sm);
+    }
+
+    .popular-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .popular-name {
+        font-size: 0.875rem;
+    }
+
+    .popular-desc {
+        font-size: 0.75rem;
     }
 
     .label-text {
@@ -1166,6 +1339,11 @@ body {
     }
 
     /* Calculator Section */
+    .calculator-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
     .calculator-container {
         padding: var(--spacing-md);
         gap: var(--spacing-md);
@@ -1173,6 +1351,47 @@ body {
 
     .calculator-inputs {
         gap: var(--spacing-md);
+    }
+
+    /* Popular Calculators - Small Mobile */
+    .popular-calculators {
+        padding: var(--spacing-sm);
+    }
+
+    .popular-title {
+        font-size: 1rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .popular-list {
+        gap: var(--spacing-xs);
+    }
+
+    .popular-item {
+        padding: 10px;
+    }
+
+    .popular-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .popular-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .popular-name {
+        font-size: 0.8125rem;
+    }
+
+    .popular-desc {
+        display: none; /* Hide description on very small screens */
+    }
+
+    .popular-arrow {
+        width: 16px;
+        height: 16px;
     }
 
     .input-group {
