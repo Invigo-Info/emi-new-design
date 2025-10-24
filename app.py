@@ -11,6 +11,10 @@ def home():
 def calculator(calc_type):
     return render_template('index.html', calculator_type=calc_type)
 
+@app.route('/car-loan-emi-calculator/')
+def car_loan_calculator():
+    return render_template('index.html', calculator_type='car')
+
 @app.route('/health')
 def health():
     return jsonify({"status": "healthy"})

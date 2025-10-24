@@ -40,7 +40,7 @@
                                 </svg>
                                 <span>Home Loan</span>
                             </a>
-                            <a href="#calculator" class="dropdown-item" onclick="scrollToCalculator('car')">
+                            <a href="/car-loan-emi-calculator/" class="dropdown-item">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M5 17h-2v-2l1-4h12l1 4v2h-2"></path>
                                     <circle cx="7" cy="17" r="2"></circle>
@@ -139,7 +139,17 @@
                     <!-- Primary Calculator Section -->
                     <section class="calculator-section" id="calculator">
             <div class="section-header">
-                <h2 class="section-title">Home Loan EMI Calculator</h2>
+                <h2 class="section-title" id="calculatorTitle">
+                    {% if calculator_type == 'car' %}
+                        Car Loan EMI Calculator
+                    {% elif calculator_type == 'personal' %}
+                        Personal Loan EMI Calculator
+                    {% elif calculator_type == 'business' %}
+                        Business Loan EMI Calculator
+                    {% else %}
+                        Home Loan EMI Calculator
+                    {% endif %}
+                </h2>
                 <p class="section-subtitle">Calculate your monthly EMI and visualize your loan breakdown</p>
             </div>
 
@@ -248,7 +258,7 @@
                     </div>
                     <h3 class="card-title">Car Loan Calculator</h3>
                     <p class="card-description">Plan your car purchase with accurate EMI calculations and interest breakdowns.</p>
-                    <button class="card-button" onclick="scrollToCalculator('car')">Try Now</button>
+                    <button class="card-button" onclick="window.location.href='/car-loan-emi-calculator/'">Try Now</button>
                 </div>
 
                 <div class="calculator-card">
@@ -447,8 +457,8 @@
                     <div class="sidebar-content">
                         <h3 class="sidebar-title">Popular EMI Calculators</h3>
                         <ul class="sidebar-links">
-                            <li><a href="#calculator" onclick="scrollToCalculator('home')">Home Loan EMI Calculator</a></li>
-                            <li><a href="#calculator" onclick="scrollToCalculator('car')">Car Loan EMI Calculator</a></li>
+                            <li><a href="/">Home Loan EMI Calculator</a></li>
+                            <li><a href="/car-loan-emi-calculator/">Car Loan EMI Calculator</a></li>
                             <li><a href="#calculator" onclick="scrollToCalculator('personal')">Personal Loan EMI Calculator</a></li>
                             <li><a href="#calculator" onclick="scrollToCalculator('business')">Business Loan EMI Calculator</a></li>
                             <li><a href="#calculator">Education Loan EMI Calculator</a></li>
