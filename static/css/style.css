@@ -274,6 +274,74 @@ body {
     height: auto;
 }
 
+/* Content with Sticky Sidebar Layout */
+.content-with-sidebar {
+    background: var(--background);
+}
+
+.content-sidebar-layout {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.main-content {
+    min-width: 0;
+}
+
+/* Sticky Sidebar */
+.sticky-sidebar {
+    position: sticky;
+    top: 90px;
+    height: fit-content;
+    max-height: calc(100vh - 110px);
+    overflow-y: auto;
+    background: var(--secondary-bg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+}
+
+.sidebar-content {
+    padding: var(--spacing-md);
+}
+
+.sidebar-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--primary);
+}
+
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-links li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.sidebar-links a {
+    display: block;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease;
+}
+
+.sidebar-links a:hover {
+    background: var(--background);
+    color: var(--primary);
+    padding-left: var(--spacing-md);
+}
+
 /* Calculator Section */
 .calculator-section {
     padding: var(--spacing-3xl) 0;
@@ -864,6 +932,15 @@ body {
 
     .hero-subtitle {
         font-size: 1.125rem;
+    }
+
+    /* Hide sticky sidebar on tablets and mobile */
+    .content-sidebar-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sticky-sidebar {
+        display: none;
     }
 
     .calculator-container {
