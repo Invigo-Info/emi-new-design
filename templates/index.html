@@ -130,9 +130,14 @@
         </div>
     </section>
 
-    <!-- Primary Calculator Section -->
-    <section class="calculator-section" id="calculator">
+    <!-- Main Content Wrapper with Sticky Sidebar -->
+    <div class="content-with-sidebar">
         <div class="container">
+            <div class="content-sidebar-layout">
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Primary Calculator Section -->
+                    <section class="calculator-section" id="calculator">
             <div class="section-header">
                 <h2 class="section-title">Home Loan EMI Calculator</h2>
                 <p class="section-subtitle">Calculate your monthly EMI and visualize your loan breakdown</p>
@@ -210,13 +215,10 @@
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
     </section>
 
     <!-- Calculator Library Grid -->
     <section class="calculators-grid" id="calculators">
-        <div class="container">
             <div class="section-header">
                 <h2 class="section-title">All EMI Calculators</h2>
                 <p class="section-subtitle">Choose the calculator that fits your needs</p>
@@ -273,12 +275,10 @@
                     <button class="card-button" onclick="scrollToCalculator('business')">Try Now</button>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Benefits Section -->
     <section class="benefits" id="features">
-        <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Why Choose Our EMI Calculator?</h2>
                 <p class="section-subtitle">Trusted by millions for accurate and instant loan calculations</p>
@@ -330,12 +330,10 @@
                     <p class="benefit-description">Always current with the latest market interest rates and trends.</p>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Trust Section -->
     <section class="trust">
-        <div class="container">
             <div class="trust-content">
                 <div class="trust-badge">
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2">
@@ -358,12 +356,10 @@
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="faq" id="faq">
-        <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Frequently Asked Questions</h2>
                 <p class="section-subtitle">Everything you need to know about EMI calculations</p>
@@ -442,8 +438,31 @@
                     </div>
                 </div>
             </div>
-        </div>
     </section>
+                </div>
+                <!-- End Main Content -->
+
+                <!-- Sticky Sidebar -->
+                <aside class="sticky-sidebar">
+                    <div class="sidebar-content">
+                        <h3 class="sidebar-title">Popular EMI Calculators</h3>
+                        <ul class="sidebar-links">
+                            <li><a href="#calculator" onclick="scrollToCalculator('home')">Home Loan EMI Calculator</a></li>
+                            <li><a href="#calculator" onclick="scrollToCalculator('car')">Car Loan EMI Calculator</a></li>
+                            <li><a href="#calculator" onclick="scrollToCalculator('personal')">Personal Loan EMI Calculator</a></li>
+                            <li><a href="#calculator" onclick="scrollToCalculator('business')">Business Loan EMI Calculator</a></li>
+                            <li><a href="#calculator">Education Loan EMI Calculator</a></li>
+                            <li><a href="#calculator">Gold Loan EMI Calculator</a></li>
+                            <li><a href="#calculator">Two-Wheeler Loan EMI Calculator</a></li>
+                            <li><a href="#calculator">Property Loan EMI Calculator</a></li>
+                        </ul>
+                    </div>
+                </aside>
+                <!-- End Sticky Sidebar -->
+            </div>
+        </div>
+    </div>
+    <!-- End Content Wrapper -->
 
     <!-- Footer -->
     <footer class="footer" id="contact">
