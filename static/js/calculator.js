@@ -275,17 +275,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add scroll effect to navbar
+// Add scroll effect to navbar and floating sidebar
 let lastScroll = 0;
 const navbar = document.querySelector('.navbar');
+const floatingSidebar = document.querySelector('.sticky-sidebar');
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
 
+    // Navbar shadow effect
     if (currentScroll <= 0) {
         navbar.style.boxShadow = 'none';
     } else {
         navbar.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+    }
+
+    // Floating sidebar effect
+    // Show sidebar after scrolling 400px down
+    if (floatingSidebar) {
+        if (currentScroll > 400) {
+            floatingSidebar.classList.add('visible');
+        } else {
+            floatingSidebar.classList.remove('visible');
+        }
     }
 
     lastScroll = currentScroll;

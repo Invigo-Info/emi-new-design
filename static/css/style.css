@@ -292,15 +292,23 @@ body {
 
 /* Sticky Sidebar */
 .sticky-sidebar {
-    position: sticky;
+    position: fixed;
     top: 90px;
+    right: -320px;
+    width: 280px;
     height: fit-content;
     max-height: calc(100vh - 110px);
     overflow-y: auto;
     background: var(--secondary-bg);
     border-radius: var(--radius-lg);
     border: 1px solid var(--border);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-xl);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 90;
+}
+
+.sticky-sidebar.visible {
+    right: 24px;
 }
 
 .sidebar-content {
@@ -934,13 +942,19 @@ body {
         font-size: 1.125rem;
     }
 
-    /* Hide sticky sidebar on tablets and mobile */
+    /* Adjust layout for tablets */
     .content-sidebar-layout {
         grid-template-columns: 1fr;
     }
 
+    /* Keep floating sidebar visible on tablets */
     .sticky-sidebar {
-        display: none;
+        right: -320px;
+        width: 260px;
+    }
+
+    .sticky-sidebar.visible {
+        right: 16px;
     }
 
     .calculator-container {
@@ -1037,6 +1051,11 @@ body {
 
     .dropdown.active .dropdown-menu {
         max-height: 500px;
+    }
+
+    /* Hide floating sidebar on mobile */
+    .sticky-sidebar {
+        display: none;
     }
 
     /* Hero Section */
